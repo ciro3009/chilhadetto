@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chi l'ha detta?</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="pagina">
+		<header class="intestazione">
+			<div>
+				<p class="etichetta">Gioco di classe</p>
+				<h1>Chi l'ha detta?</h1>
+			</div>
+		</header>
+
+		<section class="gioco" aria-labelledby="titolo-gioco">
+			<div id="schermata-iniziale" class="schermata-iniziale">
+				<p class="soprattitolo">Gioco di classe</p>
+				<h2>Sei pronto a giocare?</h2>
+				<p>Scopri chi ha detto le frasi pi&ugrave; memorabili della classe.</p>
+				<button id="inizia-gioco" class="bottone bottone-principale" type="button">
+					Inizia a giocare <span aria-hidden="true">&#8594;</span>
+				</button>
+			</div>
+
+			<div id="contenuto-gioco" class="contenuto-gioco nascosto" aria-hidden="true">
+				<div class="sezione-titolo">
+					<div>
+						<p class="soprattitolo">Indovina la frase</p>
+						<h2 id="titolo-gioco">A chi appartiene?</h2>
+					</div>
+					<div class="contatore" aria-live="polite">
+						<span id="numero-frase">1</span> / <span id="totale-frasi">2</span>
+					</div>
+				</div>
+
+				<div class="scheda-gioco">
+				<div class="virgolette">“</div>
+				<p id="citazione" class="citazione">ianno sei inutile</p>
+				<p id="istruzioni" class="istruzioni">Scegli l'autore della frase</p>
+
+				<div id="opzioni" class="opzioni"></div>
+
+				<div id="feedback" class="feedback" aria-live="polite"></div>
+				<button id="prossima-frase" class="bottone bottone-principale nascosto" type="button">
+					Prossima frase <span aria-hidden="true">&#8594;</span>
+				</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="proponi" aria-labelledby="titolo-form">
+			<div class="sezione-titolo">
+				<div>
+					<p class="soprattitolo">Contribuisci anche tu</p>
+					<h2 id="titolo-form">Proponi una frase</h2>
+				</div>
+				<span class="icona-matita" aria-hidden="true">&#9998;</span>
+			</div>
+
+			<form id="form-frase" action="https://formsubmit.co/vivox4.cv@gmail.com" method="POST">
+				<input type="hidden" name="_subject" value="Nuova frase per Chi l'ha detta?">
+				<input type="hidden" name="_captcha" value="false">
+
+				<label for="nuova-frase">Citazione / Frase</label>
+				<textarea id="nuova-frase" name="frase" rows="3" placeholder="Scrivi qui una frase memorabile..." required></textarea>
+
+				<label for="nuovo-autore">Chi l'ha detta?</label>
+				<input id="nuovo-autore" name="autore" type="text" placeholder="Nome dell'autore" required>
+
+				<button class="bottone bottone-invio" type="submit">Invia la proposta <span aria-hidden="true">&#8594;</span></button>
+				<p id="messaggio-form" class="messaggio-form" aria-live="polite"></p>
+			</form>
+		</section>
+
+		<footer>Un gioco fatto per ricordare le frasi pi&ugrave; iconiche della classe.</footer>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
